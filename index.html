@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dictionary</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="dictionary.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+  <h1>Dictionary</h1>
+  <div id="search">
+    <input type="text" id="search-bar" name="word-id" placeholder="Search a word....">
+    <input type="button" id="search-btn" value="Search">
+  </div>
+  <div id="word-container">
+    <h1 id="word"></h1><img src="speaker_icon.png" id="pronunciation" alt="pronunciation"><audio id="audio"></audio>
+    <hr>
+    <div id="definition-wrapper"></div>
+    <!-- <div class="definition-container">
+      <h3 class="part-of-speech">Part of Speech</h3>
+      <p class="definition">Definition</p>
+    </div> -->
+  </div>
+  <script src="dictionary.js"></script>
+</body>
+</html>
