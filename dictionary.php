@@ -1,8 +1,8 @@
 <?php
-    $baseURL = "https://od-api.oxforddictionaries.com/api/v1/entries/";
+    $baseURL = "https://od-api.oxforddictionaries.com/api/v2/entries/";
     $app_id = "1111111";
     $app_key = "11111111111111";
-    $lang = "en";
+    $lang = "en-us";
     $word_id = "";
 
     if (isset($_POST['word-id']))
@@ -11,7 +11,7 @@
     }
 
     // Initiate curl
-    $ch = curl_init($baseURL . $lang . '/'. $word_id . '/' . 'definitions;pronunciations;examples');
+    $ch = curl_init($baseURL . $lang . '/'. $word_id . '?' . 'fields=definitions,examples,pronunciations&strictMatch=false');
     
     //Will return the response, if false it prints the response
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
