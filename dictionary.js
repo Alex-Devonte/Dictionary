@@ -16,8 +16,7 @@ $(function() {
       type: 'POST',
       success: function(data) {
         data = JSON.parse(data);
-        
-        var pronunciation = data.results[0].lexicalEntries[0].pronunciations[0].audioFile;   
+        var pronunciation = data.results[0].lexicalEntries[0].pronunciations[1].audioFile;   
 
         /* Accurately travesing the JSON result 
           depends on whether or not there is more
@@ -47,7 +46,7 @@ $(function() {
           for (i = 0; i < numOfPartsOfSpeech; i++)
           {
             var definitionContainer = $("<div ></div>").addClass('definition-container');
-            var partOfSpeech = $('<h3>' + data.results[0].lexicalEntries[i].lexicalCategory + '</h3>').appendTo(definitionContainer).addClass('part-of-speech');
+            var partOfSpeech = $('<h3>' + data.results[0].lexicalEntries[i].lexicalCategory.id + '</h3>').appendTo(definitionContainer).addClass('part-of-speech');
             var definition   = $('<p>'  + data.results[0].lexicalEntries[i].entries[0].senses[0].definitions + '</p>').appendTo(definitionContainer).addClass('definition');
             definitionWrapper.append(definitionContainer);
           }
