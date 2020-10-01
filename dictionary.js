@@ -16,8 +16,8 @@ $(function() {
       type: 'POST',
       success: function(data) {
         data = JSON.parse(data);
-        var pronunciation = data.results[0].lexicalEntries[0].pronunciations[1].audioFile;   
-
+        var pronunciation = data.results[0].lexicalEntries[0].entries[0].pronunciations[1].audioFile; 
+        
         /* Accurately travesing the JSON result 
           depends on whether or not there is more
           than 1 part of speech for the given word */
